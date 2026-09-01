@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+input::placeholder { color: #8CA2AA; }
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #0F6B7E;
+  outline-offset: 2px;
+}
+
+@media print {
+  .no-print, .app-nav, .app-entete, .app-pied { display: none !important; }
+  body { background: #fff !important; }
+  .app-corps { padding: 0 !important; max-width: none !important; }
+  .print-entete { display: block !important; margin-bottom: 8px; }
+  #feuille-semaine .jour-col { break-inside: avoid; border-color: #ccc !important; }
+  @page { size: A4 landscape; margin: 10mm; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
